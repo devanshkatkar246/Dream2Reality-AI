@@ -129,7 +129,7 @@ export default function UsageStats() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-[9999] font-sans">
+    <div className="fixed bottom-4 right-4 z-[9999] font-sans hidden sm:block">
       <motion.div
         layout
         onClick={() => setExpanded(!expanded)}

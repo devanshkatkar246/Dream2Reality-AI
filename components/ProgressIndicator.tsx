@@ -20,14 +20,14 @@ export default function ProgressIndicator({
   onStepClick: (step: number) => void
 }) {
   return (
-    <div className="flex items-center justify-between max-w-2xl mx-auto px-4 mb-20 relative">
+    <div className="flex items-center justify-between max-w-2xl mx-auto px-2 sm:px-4 mb-20 relative overflow-hidden">
       {steps.map((step, idx) => {
         const isCompleted = visitedSteps.has(step.id) && currentStep !== step.id;
         const isActive = currentStep === step.id;
         const isLocked = !visitedSteps.has(step.id) && !isActive;
 
         return (
-          <div key={step.id} className="flex flex-col items-center flex-1 last:flex-none relative h-12">
+          <div key={step.id} className="flex flex-col items-center flex-1 last:flex-none relative h-8 sm:h-12">
             <div className="relative group">
               {isActive && (
                 <motion.div
@@ -41,7 +41,7 @@ export default function ProgressIndicator({
               <button 
                 disabled={isLocked && !isCompleted && !isActive}
                 onClick={() => (isCompleted || visitedSteps.has(step.id)) && onStepClick(step.id)}
-                className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-500 z-10 relative ${
+                className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border-2 transition-all duration-500 z-10 relative ${
                   isActive 
                     ? "bg-black border-white text-white shadow-[0_0_24px_rgba(124,106,247,0.4),0_0_0_4px_rgba(124,106,247,0.15)] scale-110" 
                     : isCompleted 
@@ -52,12 +52,12 @@ export default function ProgressIndicator({
                 {isCompleted ? (
                   <Check size={24} strokeWidth={3} />
                 ) : (
-                  <span className="font-bold text-lg">{step.id}</span>
+                  <span className="font-bold text-xs sm:text-lg">{step.id}</span>
                 )}
               </button>
             </div>
             
-            <span className={`absolute -bottom-10 whitespace-nowrap text-[10px] font-black uppercase tracking-widest transition-all duration-500 ${
+            <span className={`absolute -bottom-8 sm:-bottom-10 whitespace-nowrap text-[8px] sm:text-[10px] font-black uppercase tracking-widest transition-all duration-500 ${
               isActive ? "text-white scale-110" : isCompleted ? "text-[#2dd4bf]" : "text-zinc-600"
             }`}>
               {step.name}
@@ -65,7 +65,7 @@ export default function ProgressIndicator({
 
             {/* Connectors */}
             {idx < steps.length - 1 && (
-              <div className="absolute top-6 left-1/2 w-full h-[2px] bg-zinc-800/30 -z-0">
+              <div className="absolute top-4 sm:top-6 left-1/2 w-[calc(100%+1rem)] h-[2px] bg-zinc-800/30 -z-0">
                  <motion.div 
                    initial={false}
                    animate={{ width: visitedSteps.has(steps[idx + 1].id) || currentStep > step.id ? "100%" : "0%" }}

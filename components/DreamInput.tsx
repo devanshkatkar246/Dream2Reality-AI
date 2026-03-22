@@ -28,10 +28,10 @@ export default function DreamInput({ onSubmit }: { onSubmit: (dream: string) => 
         boxShadow: isFocused ? "0 0 0 1px rgba(124,106,247,0.2), inset 0 1px 0 rgba(255,255,255,0.05)" : "none"
       }}
       transition={{ duration: 0.3 }}
-      className="glass-card p-8 md:p-12 rounded-[20px] relative z-10"
+      className="glass-card p-4 sm:p-8 md:p-12 rounded-[20px] relative z-10"
     >
-      <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-        <Rocket className="text-primary w-6 h-6" />
+      <h2 className="text-lg sm:text-xl md:text-3xl font-bold mb-4 sm:mb-8 flex items-center gap-3">
+        <Rocket className="text-primary w-5 h-5 sm:w-6 sm:h-6" />
         Where do you want to be?
       </h2>
       
@@ -49,7 +49,7 @@ export default function DreamInput({ onSubmit }: { onSubmit: (dream: string) => 
               }
             }}
             placeholder="Describe your dream (e.g., I want to become a world-renowned AI artist living in Tokyo...)"
-            className="w-full bg-white/5 border border-white/10 rounded-2xl p-6 text-lg focus:outline-none transition-all min-h-[180px] resize-none placeholder:text-zinc-600 focus:bg-white/[0.08]"
+            className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 text-sm sm:text-lg focus:outline-none transition-all min-h-[100px] sm:min-h-[180px] resize-none placeholder:text-zinc-600 focus:bg-white/[0.08]"
           />
         </div>
 
@@ -58,7 +58,7 @@ export default function DreamInput({ onSubmit }: { onSubmit: (dream: string) => 
           disabled={!dream.trim()}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          className="shimmer-btn w-full bg-gradient-to-r from-[#7c6af7] to-[#d4537e] text-white font-semibold py-4.5 px-8 rounded-xl flex items-center justify-center gap-2.5 transition-all shadow-xl disabled:opacity-50 disabled:scale-100 group"
+          className="shimmer-btn w-full bg-gradient-to-r from-[#7c6af7] to-[#d4537e] text-white font-semibold text-sm sm:text-base py-3 px-6 sm:py-4.5 sm:px-8 rounded-xl flex items-center justify-center gap-2.5 transition-all shadow-xl disabled:opacity-50 disabled:scale-100 group"
         >
           <motion.div
             animate={isFocused ? { y: [0, -3, 0] } : {}}

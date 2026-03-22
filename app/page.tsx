@@ -158,7 +158,7 @@ export default function Home() {
   };
 
   return (
-    <main className="container mx-auto px-4 pt-[56px] pb-8 min-h-screen relative overflow-x-hidden">
+    <main className="container mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-[56px] pb-24 sm:pb-8 min-h-screen relative overflow-x-hidden">
       {!prefersReducedMotion && <AuroraBackground />}
       
       <motion.div 
@@ -177,7 +177,7 @@ export default function Home() {
               <motion.span
                 key={index}
                 variants={charVariants}
-                className={`text-5xl md:text-7xl font-black tracking-tight ${char === " " ? "mx-2" : "gradient-text"}`}
+                className={`text-3xl sm:text-5xl md:text-7xl font-black tracking-tight ${char === " " ? "mx-2" : "gradient-text"}`}
               >
                 {char}
               </motion.span>
@@ -188,7 +188,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="text-zinc-400 text-lg md:text-xl font-medium"
+            className="text-zinc-400 text-sm sm:text-lg md:text-xl font-medium px-4"
           >
             Experience your future before you live it.
           </motion.p>
@@ -214,7 +214,7 @@ export default function Home() {
               exit="exit"
               className="w-full"
             >
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-4 sm:gap-6 md:gap-8">
                 {step > 1 && (
                   <button 
                     onClick={() => navigateTo(step - 1)}
@@ -231,20 +231,20 @@ export default function Home() {
 
                 {step === 1 && (
                   <div className="space-y-12">
-                     <div className="flex bg-white/5 border border-white/10 p-1.5 rounded-full w-fit mx-auto shadow-xl backdrop-blur-md">
+                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 bg-white/5 border border-white/10 p-1.5 rounded-2xl sm:rounded-full w-full sm:w-fit mx-auto shadow-xl backdrop-blur-md">
                       {[
                         { id: "dream", label: "🚀 My Dream" },
                         { id: "guide", label: "🧭 Guide Me" },
-                        { id: "compare", label: "⚔️ Compare" }
+                        { id: "compare", label: "⚔️ Compare", colSpanClass: "col-span-2 sm:col-span-1" }
                       ].map((m) => (
                         <button
                           key={m.id}
                           onClick={() => {
                             if (m.id === "dream" || m.id === "guide" || m.id === "compare") {
-                              setMode(m.id);
+                              setMode(m.id as "dream" | "guide" | "compare");
                             }
                           }}
-                          className={`px-6 py-2 rounded-full text-[13px] font-bold transition-all duration-300 ${
+                          className={`${m.colSpanClass || ""} px-3 py-2 sm:px-6 sm:py-3 rounded-xl sm:rounded-full text-xs sm:text-[13px] font-bold transition-all duration-300 ${
                             mode === m.id 
                               ? "bg-[#7c6af7] text-white shadow-[0_4px_15px_rgba(124,106,247,0.4)]" 
                               : "text-zinc-500 hover:text-zinc-300"
