@@ -12,17 +12,17 @@
 
 <br/>
 
-> **Built in 48 hours at AI Hackathon — March 2026**
+> **Built in 24 hours at AI Hackathon — March 2026**
 > 
 > By **JSDK Coders** 🏆
 
 <br/>
 
-![Dream2Reality AI Banner](https://via.placeholder.com/1200x600/07080f/7c6af7?text=Dream2Reality+AI)
+![Dream2Reality AI Banner](./public/screenshots/banner.png)
 
 <br/>
 
-[🌐 Live Demo](https://dream2reality.vercel.app) · [📹 Demo Video](#) · [🐛 Report Bug](../../issues) · [💡 Request Feature](../../issues)
+[🌐 Live Demo](https://dream2reality-opal.vercel.app/) · [📹 Demo Video](#) · [🐛 Report Bug](../../issues) · [💡 Request Feature](../../issues)
 
 </div>
 
@@ -81,11 +81,11 @@ Your Reality Score (0-100), salary trajectory chart, mentor profiles of real peo
 
 | Dream Input | Skill Analysis |
 |:-----------:|:--------------:|
-| ![Step 1](https://via.placeholder.com/500x300/07080f/7c6af7?text=Dream+Input) | ![Step 2](https://via.placeholder.com/500x300/07080f/2dd4bf?text=Skill+Analysis) |
+| ![Step 1](./public/screenshots/step1.png) | ![Step 2](./public/screenshots/step2.png) |
 
-| Career Simulator | Reality Score |
+| Dream Comparison | Reality Score |
 |:----------------:|:-------------:|
-| ![Step 3](https://via.placeholder.com/500x300/07080f/d4537e?text=Career+Simulator) | ![Step 4](https://via.placeholder.com/500x300/07080f/22c55e?text=Reality+Score) |
+| ![Step 3](./public/screenshots/step3.png) | ![Step 4](./public/screenshots/step4.png) |
 
 </div>
 
@@ -275,7 +275,7 @@ Most AI hackathon projects crash when the API rate limit hits. We solved this wi
 
 | | Name | Role |
 |---|---|---|
-| **D** | **Devansh Katkar** | Full Stack Developer & AI Architect |
+| **D** | **Devansh Katkar** | Full Stack Developer & AI Architect - Lead Engineer |
 | **J** | **Jeet Dubey** | Product Strategist & Ideation Lead |
 | **S** | **Saanvi Gupta** | Presenter & Communications Lead |
 | **K** | **Kajal Kumawat** | Quality Assurance & Testing Lead |
